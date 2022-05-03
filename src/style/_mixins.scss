@@ -1,0 +1,57 @@
+@mixin alignFlex($horizontal: m, $vertical: m, $direction: r) {
+  display: flex;
+  @if $direction == r {
+    flex-direction: row;
+  }
+  @if $direction == c {
+    flex-direction: column;
+  }
+  @if $direction == rr {
+    flex-direction: row-reverse;
+  }
+  @if $direction == cr {
+    flex-direction: column-reverse;
+  }
+
+  @if $direction == r or $direction == rr {
+    @if $horizontal == m {
+      justify-content: center;
+    }
+    @if $horizontal == s {
+      justify-content: flex-start;
+    }
+    @if $horizontal == e {
+      justify-content: flex-end;
+    }
+
+    @if $vertical == m {
+      align-items: center;
+    }
+    @if $vertical == s {
+      align-items: flex-start;
+    }
+    @if $vertical == e {
+      align-items: flex-end;
+    }
+  } @else if $direction == c or $direction == cr {
+    @if $horizontal == m {
+      justify-content: center;
+    }
+    @if $horizontal == s {
+      justify-content: flex-start;
+    }
+    @if $horizontal == e {
+      justify-content: flex-end;
+    }
+
+    @if $vertical == m {
+      align-items: center;
+    }
+    @if $vertical == s {
+      align-items: flex-start;
+    }
+    @if $vertical == e {
+      align-items: flex-end;
+    }
+  }
+}
